@@ -9,6 +9,7 @@ function App() {
   const noOfNotes = document.querySelectorAll('.notes');
   let returnAmount;
 
+
   const giveNotes = () => {
     // console.log(returnAmount)
     for(let i=0; i< availableNotes.length; i++){
@@ -23,16 +24,12 @@ function App() {
   const evaluate = (e) => {
     e.preventDefault();
     if(cashGiven < billAmount) {
-      // setChange("wanna wash plates?")
       alert("wanna wash plates?")
-      // var message = document.querySelector('.userMessage');
-      // message.innerHTML = "wanna wash plates?";
+    } else {
+      returnAmount = Number(cashGiven - billAmount); 
+      setChange(returnAmount);
+      giveNotes();
     }
-    returnAmount = Number(cashGiven - billAmount); 
-    // message.innerHTML = ("total change to give");
-    setChange(returnAmount);
-    // console.log({change});
-    giveNotes();
   };
 
   return (
@@ -58,7 +55,6 @@ function App() {
       </form>
       <div>
         <div className="userMessage">The total change to be given back: {change} </div>
-        {/* <div>Notes that can be given </div> {outputChange} */}
         <div className="table">
         <tbody>
           <tr>
