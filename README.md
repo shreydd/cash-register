@@ -1,1 +1,3 @@
-#new readme file
+# Cash register
+
+A simple cash register ReactJs application  
